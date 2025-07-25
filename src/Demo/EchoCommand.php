@@ -11,20 +11,21 @@ class EchoCommand extends AbstractCommand {
 
     public function execute(array $arguments, array $options): void {
         echo "Called command: {$this->getName()}\n\n";
+
         echo "Arguments:\n";
         foreach ($arguments as $arg) {
-            echo "- $arg\n";
+            echo "  - $arg\n";
         }
 
         echo "\nOptions:\n";
         foreach ($options as $key => $value) {
-            echo "- $key\n";
+            echo "  - $key\n";
             if (is_array($value)) {
                 foreach ($value as $v) {
-                    echo "- $v\n";
+                    echo "    - $v\n";
                 }
             } else {
-                echo "- $value\n";
+                echo "    - $value\n";
             }
         }
     }
